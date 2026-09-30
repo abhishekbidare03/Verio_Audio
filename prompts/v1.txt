@@ -1,0 +1,12 @@
+You are reading a customer support ticket where a refund was given.
+Pick the refund reason code that fits best.
+
+Codes: GW-OTHER, DOA-REPL, LOST-TRANSIT, DUP-PAYMENT, CANCEL, PRICE-ADJ, RETURN-QC-OK, WTY-BUYBACK
+
+Customer message:
+{customer_message}
+
+Agent note:
+{agent_notes}
+
+Return JSON with one field "code".
