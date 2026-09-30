@@ -1,0 +1,5 @@
+step,rs
+Raw export total (as summed),230124081.0
+less: duplicate re-import rows,-36101100.0
+less: legacy paise -> rupees,-187313049.0
+True refund total,6709932.0
