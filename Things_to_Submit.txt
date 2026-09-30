@@ -1,0 +1,15 @@
+What did you build, and what business outcome does it move?** State the number and the money.*
+What does one run cost, and what would a month cost at Vireo's volume (roughly 650 tickets a week)?** Show the arithmetic. If you used no paid calls, say so.*
+How do you know it works?** Sample size, how you checked, error rate, and the kind of case it gets wrong.*
+Did you change, narrow, or push back on the client's ask?** What, when, and why. **[can only raise your score]***
+What is wrong with what you are handing us?** Be specific: bugs, shortcuts, things you know are off. **[can only raise your score]*
+What did you deliberately leave out, and why that rather than something else?*
+Anything you built or found that nobody asked for?*
+What did you use AI for?** Which tools and models, where they helped, where they wasted your time, what you threw away. Link your three-minute screen recording here.*
+Your Public Google Drive Link
+
+Someone picks this up on Monday and you are unreachable.** The three things they need to know.*
+Honest hours spent.** One number.*
+Github Repo Link
+Please upload your Github Repo URL (Public)
+
