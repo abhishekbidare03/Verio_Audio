@@ -185,7 +185,6 @@ cache/llm_labels.jsonl        every AI answer (lets the tool run offline)
 eval/                         test sets, labelling rulebook, spot-check, draft labels (*_1)
 output/board_pack.xlsx        ← the deliverable for Finance
 memo_to_arjun.md              one-page memo for the board pack
-submission-form.md            answers to the submission questions
 dropped_approaches.md         what was tried, dropped or replaced
 01_data_understanding.ipynb   exploration
 02_cleaning.ipynb             cleaning decisions and the reconciliation
