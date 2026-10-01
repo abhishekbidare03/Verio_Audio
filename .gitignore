@@ -1,2 +1,5 @@
 .env
 cache/*.tmp
+.venv/
+__pycache__/
+.pytest_cache/
