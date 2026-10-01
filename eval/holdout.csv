@@ -1,0 +1,71 @@
+ticket_id,category,refund_inr,refund_reason_code,replacement_issued,customer_message,agent_notes,my_code,my_real_goodwill,my_repl_given
+TK-246935,Other,525,GW-OTHER,N,"my son ordered this without asking, please reverse. how do i get this fixed?",Refunded Rs 525. Issue: cancellation request. Cancelled before dispatch. [closed],CANCEL,N,N
+TK-247664,Returns & Refunds,3499,GW-OTHER,N,"Really frustrating.  Pulse2 pucrhased around Diwali, order VR893226. you picked up the item 14 days ago and my money hasn't come back. I alreayd emailed twice. Fix this or I am posting on twitter.",Full rfnd processed (3499). Issue: rfnd not credited. Checked rfnd status on PG.,RETURN-QC-OK,N,N
+TK-254301,Audio Quality,3324,GW-OTHER,N,"[IVR transcript] Dear team, Ordered pulse 2 buds 3 weeks back. Right earbud completely silent. I tried different phone. Nothing changed. I want my moneey back.","issue: no audio one side | asked cx to check bud in caes -> esc to wty. -- Issued refund + replacement both, TL aware. //AAD",GW-OTHER,Y,Y
+TK-252384,Other,2799,GW-OTHER,N,I was charged twice for one order.  VR883502. please call me on my registered number,"rfnd approved, Rs 2799, 5-7 working days. Issue: duplicate payment. Confirmed UTRs. [closed]",DUP-PAYMENT,N,N
+TK-251248,Connectivity,4999,GW-OTHER,Y,"Heello Vireo,
+This is regarding Nexa watch. Cannot pair Nexa watch with my laptop.
+I forgot the device and tried again.
+Need thhis sorted this week.
+Thanks","Cx says unable to pair with phone. chk phone OS version. Reset done, paired ok. rfnd + rplc, cx escalation avoided.",GW-OTHER,Y,Y
+TK-245875,Billing & Payments,1299,GW-OTHER,N,"to the vireo customer care team,
+
+i am writing with reference to my order of arc neckband (vr900676) placed on 08 oct. paid once, statement disagrees. i have checked with bank. i request you to process a refund to my original payment method.
+
+regards,
+mohammed jain
+coimbatore","1. charged twice
+2. conf utrs
+3. refund of rs 1299 initiated to source",DUP-PAYMENT,N,N
+TK-242877,Billing & Payments,1169,GW-OTHER,N,"sir ji
+my bank says rs 1799 went to you but yor site says i have no orders
+bahut pareshan hu
+teh neckband
+??","1. failed order after payment
+2. conf with payment gateway
+3. refund of rs 1169 initiated to source",DUP-PAYMENT,N,N
+TK-251900,Returns & Refunds,1999,GW-OTHER,N,the return was accepted but the amount is nowhere in my account,rfnd of rs 1999 initiated to source. issue: rfnd pending. chk reverse pkp qc status. ~Manish,RETURN-QC-OK,N,N
+TK-249373,Returns & Refunds,2374,GW-OTHER,N,"this is regarding teh pulse buds. packd the box a week ago and it's still here. i rescheduled pickup twice. i want my money back. thanks & regards, mohammed roy",Refund of Rs 2374 initiated to source. Issue: pkp missed. Re-raised pkp w/ courier.,RETURN-QC-OK,Y,N
+TK-245582,Other,6648,GW-OTHER,N,"To the Vireo Customer Care Team,
+
+I am writing with reference to my order of Pulse2 (VR897994) placed on 24 Sep. Cancel order VR897994. I have tried cancel button, greyed out. I request you to kindly arrange a replacement.
+
+Yours faithfully,
+Jaspreet Banerjee",Refund of Rs 6648 initiated to source. Issue: cancel ord. Cancelled before dispatch. ~Tenzin,CANCEL,N,N
+TK-246344,Billing & Payments,3499,GW-OTHER,N,"Product: the Pulse 2 earbuds
+Order: VR881866
+Purchased: 18/10
+Issue: still waiting for my refund
+Tried: checked bank
+Expected: resolution","1. refund delay
+2. checked refund status on pg
+3. refund approved, rs 3499, 5-7 working days ~Sneha",UNCLEAR,N,N
+TK-250428,Delivery & Shipping,1274,GW-OTHER,N,"paid on 18/02, still waiting for something to show up - VR887572 - waiting for your reply","Customer reached out - shipment not received. Checked AWB with courier. RTO confirmed, reshipped. rfnd processed to source; replacement unit also shipped. //AIS",LOST-TRANSIT,N,Y
+TK-240569,Other,4248,CANCEL,N,"hello vireo, ordered pulse 1 10 days ago. my son odrered this without asking, please reverse. i tried cancel button, greyed out. kiindly look into it. awaiting response, sneha arora","1. Cancel ord
+2. Cancelled before dispatch
+3. Full rfnd processed (4248)",CANCEL,N,N
+TK-242134,Other,6174,CANCEL,N,"Hello, This is regarding the Nexa 2.  My son ordered this without asking, please reverse. I tried cancel button, greyed out. Please call me on my registered number.",rfnd of Rs 6174 initiated to source. Issue: cancel ord. Cancelled before dispatch. //MEE,CANCEL,N,N
+TK-248110,Charging & Battery,472,WTY-BUYBACK,N,"hi sir
+letf earbud shos 0% and never charrges
+bahhut pareshan hu
+hello??",left earbud not taking charge | conf fw 2.4.12 -> refunded rs 472 -KS,GW-OTHER,Y,N
+TK-241819,Returns & Refunds,6999,RETURN-QC-OK,N,"PRODUCT: STRATA 3
+PURCHASED: APRIL 22
+ISSUE: STILL WAITING FOR MY REFUND
+TRIED: CHECKED BNK
+EXPECTED: REFUND","1. Refund pending
+2. Checked reverse pkp QC status
+3. Full refund processed (6999)",RETURN-QC-OK,N,N
+TK-242405,Delivery & Shipping,400,DOA-REPL,N,sccreen has a crack before i even switched it on,cx states transit damage. chk with courier for damage claim. rfnd of Rs 400 initiated to source. //AIS,LOST-TRANSIT,N,N
+TK-249447,Delivery & Shipping,630,RETURN-QC-OK,N,"Product: the Pulse 2 earbuds
+Order: VR893667
+Purchased: 25 Dec
+Issue: the app said picukp today, that was on 25 Dec
+Tried: rescheduled pickup twice
+Expected: refund",Ticket raised for pkp missed. Re-raised pkp with courier. Refund of Rs 630 initiated to source. //AIS,GW-OTHER,Y,N
+TK-250119,Billing & Payments,3324,DUP-PAYMENT,N,"Not acceptable at this price. Pulse2 purchased 2 weeks ago, order VR892957. I was charged twice for one order. I already checked with bank. Fix this or I am posting on twitter","1. double charge
+2. checked pg for duplicate txn
+3. refunded rs 3324",DUP-PAYMENT,N,N
+TK-245269,Billing & Payments,700,RETURN-QC-OK,N,[IVR transcript] hii where is the money for the return,"1. refund pending
+2. chk refund status on pg
+3. refund of rs 700 initiated to source ~Sneha",RETURN-QC-OK,N,N

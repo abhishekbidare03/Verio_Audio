@@ -290,3 +290,54 @@ Keep notes during the build: **save every prompt version and every discarded ide
 - [ ] Memo ≤ 1 page, no jargon
 - [ ] Recording ≤ 3 minutes
 - [ ] Every field in `submission-form.md` filled, including honest hours and AI cost
+
+---
+
+## 17. Updated plan (after notebooks 01–03) — replaces §4 architecture, §11 repo layout and §14 timing
+
+Notebooks 01–03 are done (see `logs.md`). Changes since the original plan: Gemini instead of Claude, no Streamlit, gold set 60 + holdout 20, prompts v1/v2 only, legacy timestamps NOT shifted, refund month = resolved date.
+
+### Remaining steps, in order
+
+1. **Spot-check the AI-only double payouts** (~20 of the 199 the agent flag missed). Read note + AI evidence, record how many are real. No API calls.
+2. **Remove the overlap** between double payouts and over-cap goodwill, and fix the final business-goal number.
+3. **`run.py` builds the board pack directly — one script, no notebook version of the Excel:**
+   `clean (same logic as 02) → read cached labels (cache/llm_labels.jsonl) → compute → write output/board_pack.xlsx`
+   - runs with **no API key** (cache only); optional `--label` flag calls Gemini only for tickets not in the cache
+   - running the tool *is* producing the board pack
+4. **Excel sheets:**
+   | Sheet | Content |
+   |---|---|
+   | Summary | true total, quarterly trend, the two policy leaks, headline numbers |
+   | Waterfall | Rs 23.01 cr raw → Rs 67.1 L true, step by step |
+   | By reason (monthly) | month × reason: agent's original code and AI-corrected code side by side |
+   | **By agent** | see below |
+   | Exceptions | every double payout and every over-cap goodwill refund, with the note and the AI evidence quote |
+   | Method | assumptions and decisions (paise, dedupe, no UTC shift, resolved month, conservative leak, AI accuracy) |
+5. **By agent sheet** — answers "who is giving away money", kept fair:
+   - agent, **team** (shown next to every agent), tickets handled, refunds count + Rs, **refund rate = refunds ÷ tickets handled**
+   - double payouts and over-cap goodwill per agent (count + Rs)
+   - sorted by policy exceptions, not by raw refund Rs, so Billing / Returns Desk don't look bad for doing their job
+   - **Excel only, not in the memo** (memo talks about teams and processes)
+6. **`tests/test_pipeline.py`** — 3 checks that import from `run.py`:
+   - the waterfall adds back to the raw export total
+   - no duplicate ticket_ids remain after cleaning
+   - monthly refund totals sum to Rs 67,09,932
+7. **README** (setup + run in 3 commands), **memo**, **submission form**, **screen recording**.
+
+### Repo layout (final)
+```
+run.py                     clean → cached labels → board_pack.xlsx  (+ --label to call Gemini)
+requirements.txt
+README.md
+tests/test_pipeline.py
+prompts/v1.txt, v2.txt
+cache/llm_labels.jsonl
+eval/gold_set*.{csv,xlsx}, eval/holdout.csv
+01_/02_/03_*.ipynb         the working, kept as evidence of how we got here
+output/board_pack.xlsx
+logs.md, plan.md, memo_to_arjun.md, submission-form.md
+```
+
+### Gold set honesty
+First-pass labels were drafted with Claude Code. Before submitting, I review all 60 in `eval/gold_set_labelling.xlsx`, change any I disagree with, re-run notebook 03 (cache only, no API), and report it as "drafted with AI, reviewed and corrected by me (N changed)".

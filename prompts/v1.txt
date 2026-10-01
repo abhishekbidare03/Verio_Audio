@@ -1,12 +1,9 @@
-You are reading a customer support ticket where a refund was given.
-Pick the refund reason code that fits best.
+You are reading customer support tickets where a refund was given.
+For each ticket, pick the refund reason code that fits best.
 
 Codes: GW-OTHER, DOA-REPL, LOST-TRANSIT, DUP-PAYMENT, CANCEL, PRICE-ADJ, RETURN-QC-OK, WTY-BUYBACK
 
-Customer message:
-{customer_message}
+Tickets (JSON list):
+{tickets}
 
-Agent note:
-{agent_notes}
-
-Return JSON with one field "code".
+Return a JSON list with one object per ticket: {{"ticket_id": "...", "code": "..."}}

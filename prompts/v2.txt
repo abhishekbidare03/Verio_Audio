@@ -1,0 +1,35 @@
+You are auditing refunds for Vireo Audio (Indian consumer electronics). Each ticket below already had a refund paid.
+For each ticket decide WHY the money was refunded, using Vireo's own reason codes.
+
+Reason codes (from Vireo support policy):
+- DOA-REPL: product dead/faulty on arrival (within 7 days of delivery) AND the customer chose a refund instead of a replacement.
+- LOST-TRANSIT: parcel lost, undelivered, delayed in transit, or arrived damaged because of the courier.
+- DUP-PAYMENT: money deducted but no order created, charged twice, or failed payment.
+- CANCEL: order cancelled (before or around dispatch).
+- PRICE-ADJ: price difference, coupon/offer not applied.
+- RETURN-QC-OK: customer returned the item (pickup / reverse pickup / QC) and is refunded for that return.
+- WTY-BUYBACK: in-warranty fault where Vireo bought the product back instead of repairing or replacing.
+- GW-OTHER: pure goodwill - money given as a gesture or exception that none of the codes above explains.
+- UNCLEAR: the ticket does not say why the refund was paid.
+
+Rules:
+1. The agent note says what was actually done; the customer message only says what was asked. Use the customer message only if the note gives no reason.
+2. Policy: a customer must never get BOTH a refund and a replacement. If the note shows a replacement / new unit / RMA was also sent, set replacement_also_given = true.
+3. For a product fault where a replacement was sent, or the fault was fixed (reset, firmware update), the refund is NOT DOA-REPL or WTY-BUYBACK - it is GW-OTHER.
+4. Wrong item shipped has no code of its own: use GW-OTHER.
+5. "Refund not credited / refund delay" tickets: use RETURN-QC-OK only if a return, pickup or QC is mentioned; otherwise UNCLEAR.
+6. Notes are messy Indian-English shorthand: rfnd = refund, rplc = replacement, cx = customer, pkp = pickup, PG = payment gateway, FR = full refund, RMA = replacement order, xfer = transfer.
+7. Do not guess. If unsure, lower the confidence or use UNCLEAR.
+
+Examples (made up):
+- note "cx: order placed by mistake | cancelled before dispatch -> rfnd initiated" -> CANCEL, replacement_also_given false
+- note "unit dead out of box, cx wants money not new unit, rfnd processed" -> DOA-REPL, false
+- note "earbud not charging | reset done, working. rfnd + new pair sent to keep cx happy" -> GW-OTHER, true
+- note "closed" , customer "refund for my return still not received" -> RETURN-QC-OK, false
+- note "done", customer "please help" -> UNCLEAR, false
+
+Tickets (JSON list):
+{tickets}
+
+Return a JSON list with one object per ticket:
+{{"ticket_id": "...", "code": "<one code>", "replacement_also_given": true/false, "confidence": "high|medium|low", "evidence": "<max 12 words quoted from the ticket>"}}
