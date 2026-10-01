@@ -26,7 +26,7 @@ Three checks: the waterfall adds back to the raw export total, no duplicate tick
 ## What it does
 
 1. **Clean** (plain code): removes 638 duplicate tickets from the migration re-import, converts legacy Freshdesk amounts from paise to rupees, recovers missing order IDs, joins agents and products.
-2. **AI labels** (Gemini Flash-Lite, prompt `prompts/v2.txt`): re-reads refunds the agent coded GW-OTHER ("Goodwill / Other", the default dropdown) and refunds whose note mentions a replacement. It finds the real reason and whether a replacement was also given. The agent's original code is always kept next to it.
+2. **AI labels** (Gemini Flash-Lite, prompt `prompts/v3.txt`): re-reads refunds the agent coded GW-OTHER ("Goodwill / Other", the default dropdown) and refunds whose note mentions a replacement. It finds the real reason and whether a replacement was also given. The agent's original code is always kept next to it.
 3. **Board pack** (`output/board_pack.xlsx`):
 
 | Sheet | What it shows |
@@ -37,7 +37,7 @@ Three checks: the waterfall adds back to the raw export total, no duplicate tick
 | By reason – agent code / corrected | month × reason, before and after AI re-coding |
 | By agent | tickets handled, refund rate, double payouts, goodwill over cap, with team |
 | Exceptions | every double payout and over-cap goodwill refund, with the note and the AI's evidence quote |
-| AI accuracy | AI vs hand-checked labels on the gold set (60) and holdout (20) |
+| AI accuracy | AI vs hand-checked labels on the gold set (60), holdout (20) and holdout 2 (20) |
 | Method | every assumption and decision |
 
 ## Re-labelling with the AI (optional)
@@ -54,6 +54,6 @@ then run `python run.py --label`. It only sends refunds missing from the cache, 
 
 ## Other files
 
-- `01_data_understanding.ipynb`, `02_cleaning.ipynb`, `03_ai_labelling.ipynb`: how we got here (exploration, cleaning decisions, prompt v1 vs v2 evaluation)
-- `eval/`: gold set, holdout and spot-check labels
-- `logs.md`: full work log; `plan.md`: plan and reasoning
+- `01_data_understanding.ipynb`, `02_cleaning.ipynb`, `03_ai_labelling.ipynb`: how we got here (exploration, cleaning decisions, prompt v1 / v2 / v3 evaluation)
+- `eval/`: test sets (gold set, holdout, holdout 2), labelling rules, spot-check, and the first-draft label files (`*_1`) kept to show the review
+- `dropped_approaches.md`: what I tried, dropped or replaced, and the prompt versions

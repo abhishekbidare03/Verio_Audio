@@ -17,9 +17,11 @@ import pandas as pd
 GOODWILL_CAP = 500        # policy s5
 REPL_SHIPPING = 340       # policy s5, reverse pickup + forward shipping
 DP_TARGET_SHARE = 0.02    # goal: double payouts under 2% of refunds (not 0 - some TL-approved exceptions will happen)
-PROMPT_VERSION = 'v2'
+PROMPT_VERSION = 'v3'
 MODEL = 'gemini-3.5-flash-lite'
 BATCH_SIZE = 20
+VALID_CODES = {'GW-OTHER', 'DOA-REPL', 'LOST-TRANSIT', 'DUP-PAYMENT', 'CANCEL', 'PRICE-ADJ',
+               'RETURN-QC-OK', 'WTY-BUYBACK', 'UNCLEAR'}
 REPL_WORDS = r'rplc|replac|new unit|new set|new pair|fresh pair|\brma\b|re-?ship|sending a new|new one'
 
 
@@ -90,7 +92,8 @@ def load_cache(path):
         with open(path, encoding='utf-8') as f:
             for line in f:
                 rec = json.loads(line)
-                if rec.get('prompt_version') == PROMPT_VERSION:
+                # skip answers with an invented code, so --label asks again for that ticket
+                if rec.get('prompt_version') == PROMPT_VERSION and rec.get('code') in VALID_CODES:
                     cache[rec['ticket_id']] = rec
     return cache
 
@@ -131,6 +134,11 @@ def label_missing(rows, cache, cache_path, prompt_path):
 def attach_labels(refunds, cache):
     get = lambda field: refunds.ticket_id.map(lambda t: cache.get(t, {}).get(field))
     refunds['ai_code'] = get('code')
+    # the model sometimes invents a code (seen once: 'WTY-BUYBUY') -> don't trust it, treat as UNCLEAR
+    invalid = refunds.ai_code.notna() & ~refunds.ai_code.isin(VALID_CODES)
+    if invalid.any():
+        print(f'{invalid.sum()} AI answer(s) with an invalid code -> UNCLEAR:', refunds.loc[invalid, 'ai_code'].unique().tolist())
+    refunds.loc[invalid, 'ai_code'] = 'UNCLEAR'
     refunds['ai_replacement'] = get('replacement_also_given') == True
     refunds['ai_evidence'] = get('evidence')
 
@@ -176,7 +184,7 @@ def by_agent(df, refunds):
 def eval_scores(cache, eval_dir):
     """Accuracy of the AI vs hand-checked labels, recomputed from the eval files."""
     rows = []
-    for name, f in [('Gold set', 'gold_set.csv'), ('Holdout', 'holdout.csv')]:
+    for name, f in [('Gold set', 'gold_set.csv'), ('Holdout', 'holdout.csv'), ('Holdout 2 (fresh, picked v3)', 'holdout2.csv')]:
         p = os.path.join(eval_dir, f)
         if not os.path.exists(p):
             continue
@@ -188,7 +196,7 @@ def eval_scores(cache, eval_dir):
         ai = e.ticket_id.map(lambda t: cache.get(t, {}).get('code'))
         rows.append({'Test set': name, 'Tickets': len(e),
                      "Agent's original code": round((e.refund_reason_code == e.my_code).mean(), 3),
-                     'AI (prompt v2)': round((ai == e.my_code).mean(), 3)})
+                     f'AI (prompt {PROMPT_VERSION})': round((ai == e.my_code).mean(), 3)})
     return pd.DataFrame(rows)
 
 
@@ -250,7 +258,7 @@ def build_tables(raw, df, dropped, refunds, cache, eval_dir):
         'resolution-hour pattern and handle time, so no shift was applied.',
         'Refund month = month resolved (when money goes out); created month if not resolved yet. '
         '2026Q3 holds 10 refunds created in June and resolved after the data cut-off.',
-        "AI (Gemini Flash-Lite, prompt v2) re-reads only refunds the agent coded GW-OTHER, plus refunds whose note mentions a "
+        f"AI (Gemini Flash-Lite, prompt {PROMPT_VERSION}) re-reads only refunds the agent coded GW-OTHER, plus refunds whose note mentions a "
         "replacement. The agent's original code is always kept next to the AI code.",
         'Double payout = refund AND replacement on the same ticket (policy: never). Cost counted conservatively as the '
         'cheaper of the refund or the replacement (unit cost + Rs 340), since one remedy was owed.',
