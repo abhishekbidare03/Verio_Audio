@@ -1,0 +1,61 @@
+ticket_id,category,refund_inr,refund_reason_code,replacement_issued,customer_message,agent_notes,my_code,my_real_goodwill,my_repl_given,my_comment
+TK-251840,Delivery & Shipping,3499.0,GW-OTHER,Y,"hello ji
+paid on 21-02-2026, still waitnig for something to show up
+anyone there","Cust contacted re shipment not received. Checked AWB with courier. RTO confirmed, reshipped. -- Credited full amount, new unit also going out tomorrow. //AIS",LOST-TRANSIT,Y,Y,"R3/R7 not delivered, reshipped + full credit"
+TK-253197,Returns & Refunds,3149.0,GW-OTHER,N,"Hi, Bought the Pulse 2 earbuds aroudn 09/05 from vireo.in.  The return was accepted but the amount is nowhere in my account. I checked bank. Can someone fix this? Thanks & rgeards","Contact re rfnd not credited. Checked rfnd status on PG. rfdn approved, Rs 3149, 5-7 working days. Follow-up not required. -- Full rfnd issued and replacement dispatched as goodwill.",RETURN-QC-OK,Y,Y,R3 return accepted + replacement as goodwill (seen in earlier spot-check)
+TK-242965,Delivery & Shipping,1299.0,GW-OTHER,N,"Really frustrating. Tihs is regarding Arc neckband. order not delivered, tracking not updating. I already checked with neighbours. Refund. Now.","1. Delivery delayed
+2. Raised ticket with courier partner
+3. Refund of Rs 1299 initiated to source",LOST-TRANSIT,N,N,R7
+TK-241735,Billing & Payments,3998.0,GW-OTHER,N,"helo
+where is the money for the return",cx ok (sop 5.4),RETURN-QC-OK,N,N,"R6/R4 note empty, msg asks for return money"
+TK-246844,Delivery & Shipping,6499.0,GW-OTHER,Y,This is very disappointing.  Got Nexa 2 from Amazon around Diwali. opened the parcel and it is a completely different thing. I already rechecked my order. Fix this or I am posting on twitter.,refunded rs 6499. issue: incorrect product shipped. verified order vs delivered item photos. -- both refund and replacement given as cx threatened social media. -RM,GW-OTHER,Y,Y,R5 wrong item; refund + replacement after social media threat
+TK-250359,Other,1999.0,GW-OTHER,Y,[IVR transcript] honestly regrettting this purchase. bougth the pulse buds arround 30 dec from flipkart. i sent the unnit in 13 days ago and have heard nothing. i already emailed twice. refund. now.,"issue: wty claim status | followed up w/ service centre -> repair completed, shipped back. Processed FR & raised RMA for new set. //AAD",GW-OTHER,Y,Y,"R3 repair done, still full refund + new set"
+TK-246928,Connectivity,3324.0,GW-OTHER,Y,[IVR transcript] hi it connects for a second and then vanishes from the device list pls reply,"Reported: device not discoverable. Walked through forget + re-pair. Reset done, paired ok. Case closed with cx consent. -- Reversed the payment and dispatched a new one under RMA. ~Amit",GW-OTHER,Y,Y,"R3 fixed by reset, still refund + new unit"
+TK-242666,Other,2499.0,GW-OTHER,N,"Hi there,
+This is regarding Orbit Mini.  Order status stuck on shipped since 31/05.
+Please resolve asap.","1. order not delivered
+2. raised ticket w/ crr partner
+3. crr conf delivery for 11 jun, cx informed. processed fr and raised rma for new set.",GW-OTHER,Y,Y,"R3 courier confirmed delivery, still full refund + new set"
+TK-244220,Returns & Refunds,3499.0,GW-OTHER,N,"Dear Sir/Madam,
+
+I am writing with reference to my order of Pulse 2 (VR897002) placed on 30-07-2025.  You picked up the item 20 days ago and my money hasn't come back. I have emailed twice. I request you to kindly arrange a replacement.
+
+Sincerely,
+Kabir Gill
+Nagpur",ticket raised for rfnd pending. checked rfnd status on pg. rfnd confirmed credited. case closed w/ cx consent. ~Manish,RETURN-QC-OK,N,N,R2 item picked up
+TK-252699,Connectivity,6998.0,GW-OTHER,N,"not pairing w/ my phone
+VR888041",Ticket raised for pairing failure. Walked through forget + re-pair. Refund of Rs 6998 initiated to source. -TK,WTY-BUYBACK,N,N,"R8 fault refunded, no fix or replacement stated"
+TK-252735,Billing & Payments,2499.0,GW-OTHER,N,"payment was deducted but no order was created, VR883334",done,DUP-PAYMENT,N,N,R6 note empty
+TK-245499,Billing & Payments,2499.0,GW-OTHER,N,"Not acceeptable at this price.  Ordered Obit Mini 2 weeks ago. paid via UPI, amount deducted, no orrder confirmation. I already waited 24 hours. Fix thsi or I am posting on twitter.","Customer reached out - payment debited, no ord. conf w/ payment gateway. rfnd approved, Rs 2499, 5-7 working days. Case closed w/ cx consent.",DUP-PAYMENT,N,N,
+TK-253376,Delivery & Shipping,2499.0,RETURN-QC-OK,N,"pickup scheduled but no one showed up, what do i do now?",Cx reported pickup not done. chk pickup AWB. Full refund processed (2499).,GW-OTHER,Y,N,"R2 pickup not done, refunded anyway"
+TK-253126,Returns & Refunds,1619.0,RETURN-QC-OK,N,"hi sir
+where is the money for the return
+bahut pareshan hu
+airlite earbuds",Cx reported refund not credited. chk refund status on PG. Refuund of Rs 1619 initiated to source. Case closed w/ cx consent. (SOP 4.2) | Refund issued; rplc not applicable (out of stock).,RETURN-QC-OK,N,N,R4 return mentioned
+TK-244498,Delivery & Shipping,4999.0,DOA-REPL,N,"hi sir
+product arrived damaged
+kuch karo
+pls reply","1. Unit received damaged
+2. Checked w/ courier for damage claim
+3. Replacement dispatched",LOST-TRANSIT,Y,Y,"R7 + R3 damaged via courier, replacement dispatched and refund recorded"
+TK-241089,Returns & Refunds,4748.0,RETURN-QC-OK,N,"Product: the mini speaker
+Order: VR893525
+Purchased: 26-02-2025
+Issue: still waiting for my refund
+Tried: emailed twice
+Expected: callback",Contact re refund pending. Checked refund status on PG. ARN shared with cx. Cx informed. -- Refund issued; replacement not applicable (out of stock).,UNCLEAR,N,N,"R4 refund delay, no return info"
+TK-241415,Returns & Refunds,5849.0,GW-OTHER,N,"I have been sitting at home for 3 days waiting for your courier, please advise",cx states pickup not done. Re-raised pickup w/ courier. Refunded Rs 5849. Will monitor.,GW-OTHER,Y,N,"R2 pickup not done, refunded anyway"
+TK-249490,Returns & Refunds,2974.0,GW-OTHER,N,"To the Vireo Customer Care Team,
+
+I am writing w/ reference to my order of Pulse 2 (VR897172) placed on January 19.  Received the wrong item. I have checked the invoice. I request you to kindly arrange a replacement.
+
+Yours faithfully,
+Priya Deshpande",reverse pkp + correct item shipped ~Manish,GW-OTHER,Y,Y,R5 wrong item; correct item shipped + refund recorded
+TK-242001,Returns & Refunds,1999.0,GW-OTHER,N,"Hey, This is regarding the Pulse buds. You picked up the item 5 days ago and my money hasn't come back. I checked bank. Kindly look into it.",refunded rs 1999. issue: refund pending. chk reverse pkp qc status. ~Manish,RETURN-QC-OK,N,N,R2 reverse pickup QC
+TK-252118,Returns & Refunds,2470.0,GW-OTHER,N,"Dear Sir/Madam,
+
+I am writing with reference to my order of my Nexa 2 watch placed on 01-04-2026. Pickup scheduled but no one showed up. I have rescheduled pickup twice. I request you to provide a resolution within 3 working days.
+
+Regards,
+Lakshmi George
+Kolkata","Refund approved, Rs 2470, 5-7 working days. Issue: pkp missed. Re-raised pkp w/ crr. (SOP 5.4)",GW-OTHER,Y,N,"R2 pickup missed, refund approved"

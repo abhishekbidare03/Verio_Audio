@@ -1015,7 +1015,7 @@ TK-246276,2025-10,2025Q4,A3035,Dev Kulkarni,Billing,VA-EB-PL1,2249.0,GW-OTHER,DU
 TK-246279,2025-10,2025Q4,A3014,Anjali D'Souza,Chat Frontline,VA-EB-PL1,1999.0,GW-OTHER,GW-OTHER,GW-OTHER,Issued rfnd + rplc both,Y,True,True,1460.0,True
 TK-246285,2025-10,2025Q4,A3038,Ankit Dhillon,Returns Desk,VA-SW-NX2,5524.0,RETURN-QC-OK,RETURN-QC-OK,,,N,,False,0.0,False
 TK-246289,2025-10,2025Q4,A3011,Rohit Gill,Chat Frontline,VA-EB-PL2,6998.0,GW-OTHER,CANCEL,CANCEL,Issue: cancel ord. Cancelled before dispatch.,N,False,False,0.0,True
-TK-246290,2025-10,2025Q4,A3010,Tenzin Mathew,Chat Frontline,VA-HP-ST3,6649.0,WTY-BUYBACK,WTY-BUYBACK,,,N,,False,0.0,False
+TK-246290,2025-10,2025Q4,A3010,Tenzin Mathew,Chat Frontline,VA-HP-ST3,6649.0,WTY-BUYBACK,WTY-BUYBACK,GW-OTHER,"Cx got the amount back, also sending a new set",N,True,True,2990.0,False
 TK-246306,2025-10,2025Q4,A3033,Vikram Banerjee,Billing,VA-EB-PL1,450.0,DUP-PAYMENT,DUP-PAYMENT,,,N,,False,0.0,False
 TK-246310,2025-10,2025Q4,A3030,Aishwarya Trivedi,Logistics,VA-EB-PL2,3499.0,DOA-REPL,DOA-REPL,,,N,,False,0.0,False
 TK-246313,2025-10,2025Q4,A3035,Dev Kulkarni,Billing,VA-SW-NX1,9998.0,GW-OTHER,DUP-PAYMENT,DUP-PAYMENT,"payment debited, no ord | confirmed w/ payment gatway",N,False,False,0.0,True
@@ -2134,7 +2134,7 @@ TK-253354,2026-05,2026Q2,A3038,Ankit Dhillon,Returns Desk,VA-EB-PL2,3499.0,GW-OT
 TK-253358,2026-05,2026Q2,A3028,Sameer Kapoor,Logistics,VA-HP-ST3,892.0,GW-OTHER,CANCEL,CANCEL,cust contacted re cancel ord,N,False,False,0.0,True
 TK-253362,2026-05,2026Q2,A3031,Zaid Desai,Logistics,VA-SW-NX2,6174.0,GW-OTHER,CANCEL,CANCEL,cancellation request | checked shipment status,N,False,False,0.0,True
 TK-253368,2026-05,2026Q2,A3027,Priya Agarwal,Logistics,VA-EB-PL2,3499.0,PRICE-ADJ,PRICE-ADJ,,,N,,False,0.0,False
-TK-253376,2026-05,2026Q2,A3030,Aishwarya Trivedi,Logistics,VA-EB-PL1,2499.0,RETURN-QC-OK,RETURN-QC-OK,,,N,,False,0.0,False
+TK-253376,2026-05,2026Q2,A3030,Aishwarya Trivedi,Logistics,VA-EB-PL1,2499.0,RETURN-QC-OK,RETURN-QC-OK,RETURN-QC-OK,Cx reported pickup not done. chk pickup AWB. Full refund processed,N,False,False,0.0,False
 TK-253378,2026-05,2026Q2,A3002,Steven Ansari,Chat Frontline,VA-EB-PL2,2799.0,GW-OTHER,LOST-TRANSIT,LOST-TRANSIT,refund initiated as lost in transit,N,True,True,1820.0,True
 TK-253393,2026-05,2026Q2,A3037,Manish Iyer,Returns Desk,VA-SP-MINI,2124.0,RETURN-QC-OK,RETURN-QC-OK,,,N,,False,0.0,False
 TK-253395,2026-05,2026Q2,A3038,Ankit Dhillon,Returns Desk,VA-HP-ST2,2124.0,GW-OTHER,RETURN-QC-OK,RETURN-QC-OK,chk reverse pkp QC status,N,False,False,0.0,True
@@ -2240,7 +2240,7 @@ TK-253991,2026-06,2026Q2,A3028,Sameer Kapoor,Logistics,VA-HP-ST3,6999.0,GW-OTHER
 TK-253996,2026-06,2026Q2,A3037,Manish Iyer,Returns Desk,VA-SW-NX2,12348.0,GW-OTHER,UNCLEAR,UNCLEAR,done,N,False,False,0.0,True
 TK-253997,2026-06,2026Q2,A3027,Priya Agarwal,Logistics,VA-HP-ST3,6299.0,GW-OTHER,LOST-TRANSIT,LOST-TRANSIT,Refund initiated as lost in transit... dispatched a new one,Y,True,True,2990.0,True
 TK-254003,2026-06,2026Q2,A3030,Aishwarya Trivedi,Logistics,VA-AC-CH65,1349.0,WTY-BUYBACK,WTY-BUYBACK,LOST-TRANSIT,transit damage... rplc dispatched. Both rfnd & replacement given,N,True,True,950.0,False
-TK-254011,2026-06,2026Q2,A3037,Manish Iyer,Returns Desk,VA-EB-PL1,2374.0,GW-OTHER,GW-OTHER,,,N,,False,0.0,True
+TK-254011,2026-06,2026Q2,A3037,Manish Iyer,Returns Desk,VA-EB-PL1,2374.0,GW-OTHER,RETURN-QC-OK,RETURN-QC-OK,checked reverse pkp qc status,N,False,False,0.0,True
 TK-254014,2026-06,2026Q2,A3033,Vikram Banerjee,Billing,VA-EB-PL2,2799.0,DUP-PAYMENT,DUP-PAYMENT,,,N,,False,0.0,False
 TK-254026,2026-06,2026Q2,A3031,Zaid Desai,Logistics,VA-SW-NX2,520.0,DOA-REPL,DOA-REPL,,,N,,False,0.0,False
 TK-254038,2026-06,2026Q2,A3018,Krishna Bhatt,Email Frontline,VA-EB-PL2,2799.0,WTY-BUYBACK,WTY-BUYBACK,GW-OTHER,reset done... Full refund issued and replacement dispatched as goodwill,N,True,True,1820.0,False
