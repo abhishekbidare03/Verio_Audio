@@ -43,8 +43,8 @@ python -m pytest -q tests
 | 2. A business goal, as a number | Top of the **Summary** sheet in `output/board_pack.xlsx`, and below |
 | 3. A way of showing it works | `tests/`, the **AI accuracy** sheet, `eval/`, and [How we know it works](#how-we-know-it-works) below |
 | 4. One-page memo to Arjun | `memo_to_arjun.md` |
-| 5. Screen recording | Link in `submission-form.md` |
-| 6. Submission form | `submission-form.md` |
+| 5. Screen recording | Link submitted with the submission form |
+| 6. Submission form | Submitted separately (not in this repo) |
 
 ---
 
