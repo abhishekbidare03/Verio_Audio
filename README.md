@@ -2,7 +2,9 @@
 
 **A small AI-assisted tool that turns Vireo's messy helpdesk export into a refund summary Finance can trust:** monthly, by reason code and by agent, reconciled to the rupee, with every policy breach flagged.
 
-> **The short answer for Finance:** refunds are **Rs 12.6 lakh a quarter, not over a crore**. They doubled in 2025 mostly because ticket volume doubled. About **Rs 1.9 lakh a quarter is paid out against Vireo's own policy**, mainly customers who got a refund *and* a replacement.
+> **The headline for Finance:** about **80 customers a quarter get a refund *and* a replacement for the same order** (≈1 in 6 refunds, against policy), costing at least **Rs 1.4 lakh a quarter**. **More than half are invisible in the helpdesk**; they only appear in agents' notes, which is what the AI reads. Blocking it saves about **Rs 1.2 lakh a quarter (≈ Rs 5 lakh a year)**. Separately, the real refund total is **Rs 12.6 lakh a quarter, not over a crore**: the export double-counted tickets and stored old amounts in paise.
+
+**AI choices at a glance:** plain code (no model) for anything with one right answer: duplicates, paise, dates. **Gemini 3.5 Flash-Lite** only for reading free-text notes, picked over Claude Haiku (no key) because it's on the free tier. **Three prompt versions were tested** against hand-checked tickets: v1 60% → v2 82% → v3 85% (90% on fresh tickets), all beating keyword rules (35–65%) and the agents' own codes (37–40%). Details in [Prompt versions](#prompt-versions) and `dropped_approaches.md`.
 
 ---
 
