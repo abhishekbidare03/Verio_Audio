@@ -5,3 +5,24 @@ __pycache__/
 .pytest_cache/
 logs.md
 plan.md
+
+# client data pack - never commit (confidential)
+tickets.csv
+customers.csv
+orders.csv
+agents.csv
+products.csv
+support-policy.pdf
+EMAIL_THREAD.txt
+README.txt
+Things_to_Submit.txt
+
+# derived files that contain ticket text, customer or agent names
+output/
+cache/
+eval/*.csv
+eval/*.xlsx
+
+# submission form is submitted separately
+submission.md
+submission-form.md

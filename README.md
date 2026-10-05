@@ -6,15 +6,27 @@
 
 ---
 
-## Quick start (no API key needed)
+## Client data is not in this repo
 
-Needs **Python 3.10+**. Three commands:
+Vireo's data is confidential, so it is **not committed**: the tickets, customers, orders, agents, products, policy PDF and email thread. Neither is anything derived from it that contains ticket text or names (`output/`, `cache/`, the labelled test sets in `eval/`). The notebooks are committed with their outputs cleared. Everything that needs data is listed in `.gitignore`.
+
+To run it, put the data pack files in the project folder:
+
+```
+tickets.csv  agents.csv  orders.csv  products.csv  customers.csv
+```
+
+If you also have the saved AI answers (`cache/llm_labels.jsonl`, shared privately), `run.py` works offline with no API key. Without them, add a Gemini key and run `python run.py --label` once to rebuild them (see [Re-labelling](#re-labelling-with-the-ai-optional), about 63 calls on the free tier).
+
+## Quick start
+
+Needs **Python 3.10+**:
 
 ```bash
 python -m venv .venv
 .venv\Scripts\activate            # macOS / Linux: source .venv/bin/activate
 pip install -r requirements.txt
-python run.py
+python run.py                     # or: python run.py --label  (first run without the cache)
 ```
 
 You'll see:
@@ -25,9 +37,9 @@ wrote output/board_pack.xlsx
   goal              : Cut refunds that also got a replacement from 17% of refunds to under 2%, worth about Rs 1.2 lakh a quarter (Rs 4.9 lakh a year).
 ```
 
-Then open **`output/board_pack.xlsx`**. This works offline: the AI's answers are already saved in `cache/llm_labels.jsonl`.
+Then open **`output/board_pack.xlsx`**. It's generated locally and not committed, because it contains agent names and ticket notes.
 
-**Check it's correct:**
+**Check it's correct** (needs the data pack):
 
 ```bash
 python -m pytest -q tests
@@ -40,8 +52,8 @@ python -m pytest -q tests
 | What the brief asked for | Where it is |
 |---|---|
 | 1. A working AI-assisted tool | `run.py` (this README is the setup) |
-| 2. A business goal, as a number | Top of the **Summary** sheet in `output/board_pack.xlsx`, and below |
-| 3. A way of showing it works | `tests/`, the **AI accuracy** sheet, `eval/`, and [How we know it works](#how-we-know-it-works) below |
+| 2. A business goal, as a number | [The business goal](#the-business-goal) below, and the top of the **Summary** sheet that `run.py` generates |
+| 3. A way of showing it works | `tests/`, `eval/labelling_rules.md`, the generated **AI accuracy** sheet, and [How we know it works](#how-we-know-it-works) below |
 | 4. One-page memo to Arjun | `memo_to_arjun.md` |
 | 5. Screen recording | Link submitted with the submission form |
 | 6. Submission form | Submitted separately (not in this repo) |
@@ -136,7 +148,7 @@ Vireo's policy says a customer must never get both. The helpdesk's "replacement 
 
 - **Refund + replacement detection:** 28/28 across all test sets, 0 false alarms. A hand spot-check of 20 cases only the AI found: 18 confirmed, 2 likely, 0 wrong.
 - **Where it's wrong** (about 1 in 10): "refund not credited" follow-ups that should be UNCLEAR, refund + replacement on a return or transit case, and notes that say nothing ("done", "closed").
-- **Test labels:** first drafted with Claude Code, then reviewed and corrected by hand. The drafts are kept as `eval/*_1.*`.
+- **Test labels:** first drafted with Claude Code, then reviewed and corrected by hand. The labelled test sets contain ticket text, so they're kept locally, not in this repo. The rules used are in `eval/labelling_rules.md`.
 
 ### Prompt versions
 
@@ -176,20 +188,28 @@ It sends **only refunds missing from the cache**, 20 per call, stops on the firs
 
 ## Project structure
 
+In this repo:
+
 ```
-run.py                        the tool: clean → cached AI labels → board pack (+ --label)
+run.py                        the tool: clean → AI labels → board pack (+ --label)
 requirements.txt
 tests/test_pipeline.py        3 reconciliation checks
 prompts/v1.txt v2.txt v3.txt  prompt history (v3 is used)
-cache/llm_labels.jsonl        every AI answer (lets the tool run offline)
-eval/                         test sets, labelling rulebook, spot-check, draft labels (*_1)
-output/board_pack.xlsx        ← the deliverable for Finance
+eval/labelling_rules.md       the rulebook the test sets were labelled with
 memo_to_arjun.md              one-page memo for the board pack
 dropped_approaches.md         what was tried, dropped or replaced
-01_data_understanding.ipynb   exploration
-02_cleaning.ipynb             cleaning decisions and the reconciliation
-03_ai_labelling.ipynb         gold set, baselines, prompts v1 → v3, holdouts, full runs
-*.csv, support-policy.pdf, EMAIL_THREAD.txt, README.txt   the data pack as provided
+01_data_understanding.ipynb   exploration (outputs cleared)
+02_cleaning.ipynb             cleaning decisions and the reconciliation (outputs cleared)
+03_ai_labelling.ipynb         gold set, baselines, prompts v1 → v3, holdouts, full runs (outputs cleared)
+```
+
+Local only (git-ignored, contains client data):
+
+```
+*.csv, support-policy.pdf, EMAIL_THREAD.txt, README.txt   the data pack
+cache/llm_labels.jsonl        every AI answer (lets the tool run offline)
+eval/*.csv, eval/*.xlsx       labelled test sets and spot-check
+output/board_pack.xlsx        ← the deliverable for Finance (generated by run.py)
 ```
 
 ---
@@ -200,4 +220,4 @@ dropped_approaches.md         what was tried, dropped or replaced
 - **The double payout count is a minimum.** The AI only re-reads refunds coded "Goodwill / Other" or whose note mentions a replacement, and refunds and replacements on *different* tickets for the same order aren't counted yet.
 - "Goodwill above the cap" is approximate, because wrong-item refunds also land in "Goodwill / Other" (no code exists for them).
 - The model isn't perfectly repeatable even at temperature 0, which is why answers are cached rather than re-asked.
-- **Don't open and re-save the CSVs in Excel.** It rewrites the timestamps (e.g. `1/1/2025 9:17`). `run.py` will stop with a date-format error rather than produce wrong months. Restore with `git checkout -- tickets.csv`.
+- **Don't open and re-save the CSVs in Excel.** It rewrites the timestamps (e.g. `1/1/2025 9:17`). `run.py` will stop with a date-format error rather than produce wrong months. If that happens, copy `tickets.csv` again from the original data pack.
