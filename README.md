@@ -8,18 +8,6 @@
 
 ---
 
-## Client data is not in this repo
-
-Vireo's data is confidential, so it is **not committed**: the tickets, customers, orders, agents, products, policy PDF and email thread. Neither is anything derived from it that contains ticket text or names (`output/`, `cache/`, the labelled test sets in `eval/`). The notebooks are committed with their outputs cleared. Everything that needs data is listed in `.gitignore`.
-
-To run it, put the data pack files in the project folder:
-
-```
-tickets.csv  agents.csv  orders.csv  products.csv  customers.csv
-```
-
-If you also have the saved AI answers (`cache/llm_labels.jsonl`, shared privately), `run.py` works offline with no API key. Without them, add a Gemini key and run `python run.py --label` once to rebuild them (see [Re-labelling](#re-labelling-with-the-ai-optional), about 63 calls on the free tier).
-
 ## Quick start
 
 Needs **Python 3.10+**:
